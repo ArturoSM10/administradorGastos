@@ -103,7 +103,7 @@
     }
 
     .presupuesto,
-    .cantidad {
+    .restante {
         font-weight: 700;
         padding: 1.5rem;
         border-radius: 0.5rem;
@@ -117,7 +117,7 @@
         color: v.$presupuestoFont;
     }
 
-    .cantidad {
+    .restante {
         background-color: v.$restante;
         color: v.$restanteFont;
     }
