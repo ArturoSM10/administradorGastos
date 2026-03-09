@@ -1,2 +1,19 @@
 @use '../base/variables' as v;
 @use '../components/mixins' as m;
+
+.main {
+    &__title {
+        color: v.$blanco;
+        font-weight: 100;
+        text-align: center;
+        margin: 3rem 0;
+        font-size: 4.4rem;
+        text-transform: capitalize;
+    }
+
+    &__contenedor {
+        background-color: v.$blanco;
+        padding: 3rem;
+        border-radius: 2.5rem;
+    }
+}
