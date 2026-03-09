@@ -14,8 +14,6 @@
             <form class="form">
                 <legend class="form__legend">Añade tus gastos aquí</legend>
     
-                <p class="correcto">Añade un gasto</p>
-    
                 <div class="campo">
                     <label for="gasto">Gasto: </label>
                     <input type="text" name="gasto" id="gasto" placeholder="Nombre gasto">
@@ -25,21 +23,16 @@
                     <input type="text" name="cantidad" id="cantidad" placeholder="Cantidad en $">
                 </div>
     
-                <button type="submit">Agregar</button>
+                <button class="submit" type="submit">Agregar</button>
             </form>
             <section class="listado">
                 <h2 class="listado__title">Listado</h2>
     
-                <ul class="listado">
-                    <li class="listado__li">
-                        <p class="listado__gasto">Gasto</p>
-                        <p class="listado__precio">Precio</p>
-                        <a class="listado__a" href="#">Borrar</a>
-                    </li>
+                <ul class="listado__ul">
                 </ul>
     
-                <p class="presupuesto">Presupuesto: $<span class="presupuesto__span"></span></p>
-                <p class="cantidad">Cantidad: $<span class="cantidad__span"></span></p>
+                <p class="presupuesto">Presupuesto: $ <span class="presupuesto__span"></span></p>
+                <p class="cantidad">Cantidad: $ <span class="cantidad__span"></span></p>
             </section>
         </div>
     </main>

@@ -13,7 +13,127 @@
 
     &__contenedor {
         background-color: v.$blanco;
-        padding: 3rem;
+        padding: 3rem 4.5rem;
         border-radius: 2.5rem;
+
+        @include m.tablet {
+            @include m.grid(2, 5rem);
+        } 
+    }
+}
+
+.form {
+    &__legend {
+        display: block;
+        color: v.$degradadoPrimario;
+        text-align: center;
+        font-weight: 100;
+        font-size: 2.2rem;
+        margin: 2rem 0;
+    }
+
+    .campo {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        input {
+            padding: 1rem;
+            border: 1px solid v.$border;
+            border-radius: 0.5rem;
+            color: v.$border;
+        }
+    }
+
+    .submit {
+        @include m.boton(v.$azulBtn, v.$blanco, Capitalize);
+        width: fit-content;
+        padding: 1rem;
+        font-weight: 300;
+        outline: 0;
+        margin-top: 2rem;
+        &:focus {
+            box-shadow: 0 0 0 0.3rem rgba($color: v.$azulBtn, $alpha: 0.5);
+        }
+    }
+}
+
+.listado {
+
+    &__title {
+        color: v.$degradadoPrimario;
+        text-align: center;
+        font-weight: 100;
+    }
+
+    &__ul {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 4.5rem;
+    }
+
+    &__li {
+        border: 1px solid v.$border;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.5rem;
+        border-radius: 0.5rem;
+    }
+
+    &__precio {
+        background-color: v.$azulBtn;
+        padding: 0.1rem 0.8rem;
+        color: v.$blanco;
+        font-size: 1.2rem;
+        border-radius: 1rem;
+    }
+
+    &__a {
+        @include m.boton(v.$rojoBtn, v.$blanco, capitalize);
+        width: fit-content;
+        padding: 1rem 1.3rem;
+        font-weight: 300;
+    }
+
+    &__gasto,
+    &__a {
+        font-size: 1.6rem;
+    }
+
+    .presupuesto,
+    .cantidad {
+        font-weight: 700;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        &__span {
+            font-weight: 400;
+        }
+    }
+
+    .presupuesto {
+        background-color: v.$presupuesto;
+        color: v.$presupuestoFont;
+    }
+
+    .cantidad {
+        background-color: v.$restante;
+        color: v.$restanteFont;
+    }
+}
+.alerta {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+
+    &.correcto {
+        background-color: v.$correcto;
+        color: v.$correctoFont;
+    }
+
+    &.incorrecto {
+        background-color: v.$incorrecto;
+        color: v.$incorrectoFont;
     }
 }
