@@ -22,16 +22,30 @@ class UI {
 
         /*Falta agregar que se puedan crear dos alertas en caso de que el presupuesto se haya agotado*/
     }
+
+    cargarInfoPagina(presupuesto) {
+        const presupuestoSpan = document.querySelector(`.presupuesto__span`);
+        const restanteSpan = document.querySelector(`.restante__span`);
+
+        presupuestoSpan.textContent = presupuesto;
+        restanteSpan.textContent = restante;
+    }
 }
 
-let presupuesto;
+let presupuesto = 0;
+let gastos = [];
+let restante = presupuesto; 
 const ui = new UI();
 const form = document.querySelector(`.form`);
 
-document.addEventListener(`DOMContentLoaded`, iniciarPagina);
+document.addEventListener(`DOMContentLoaded`, cargarInfoPagina);
 
-function iniciarPagina() {
-    presupuesto = prompt(`¿Cuál es tu presupuesto`);
+function cargarInfoPagina() {
+    while(presupuesto <= 0 || Number.isNaN(presupuesto)) {
+        presupuesto = Number(prompt(`¿Cuál es tu presupuesto?`));
+    }
+    restante = presupuesto;
+    ui.cargarInfoPagina(presupuesto, restante);
     leerEventos();
 }
 
