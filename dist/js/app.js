@@ -8,7 +8,6 @@ class AdministrarPresupuesto {
     agregarGasto(objeto) {
         this.gastos = [...this.gastos, objeto];
         this.actualizarRestante();
-        this.comprobarRestante();
     }
 
     actualizarRestante() {
@@ -29,10 +28,9 @@ class AdministrarPresupuesto {
         const btnAgregar = document.querySelector(`.submit`);
         if (this.restante === 0) {
             ui.alerta('Se alcanzo el maximo a gastar', 'agotado');
-            btnAgregar.disabled = true;
         }
         else {
-            btnAgregar.disabled = false;
+            ui.desactivarSubmit(false);
         }
         
     }
@@ -51,8 +49,8 @@ class UI {
         const existe = document.querySelector(`.alerta`);
         if (existe && tipo !== `agotado`) return; 
         else if (tipo === `agotado`) {
-            alertaHtml(texto, `correcto`);
             alertaHtml(`Presupuesto agotado`, `incorrecto`);
+            this.desactivarSubmit(true);
         }
         else {
             alertaHtml(texto, tipo);
@@ -93,6 +91,12 @@ class UI {
         const elementoRestante = document.querySelector(`.restante__span`);
         elementoRestante.textContent = restante;
     }
+
+    desactivarSubmit(valor) {
+        const btnAgregar = document.querySelector(`.submit`);
+        btnAgregar.disabled = valor;
+    }
+
 }
 
 let ui = new UI();
