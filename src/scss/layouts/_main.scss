@@ -55,6 +55,11 @@
         &:focus {
             box-shadow: 0 0 0 0.3rem rgba($color: v.$azulBtn, $alpha: 0.5);
         }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
     }
 }
 
@@ -79,6 +84,9 @@
         margin-bottom: 0.5rem;
         @include m.grid(3, 0);
         align-items: center;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 
     &__precio {
